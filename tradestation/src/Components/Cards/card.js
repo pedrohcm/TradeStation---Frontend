@@ -50,19 +50,35 @@ const anuncios = [
     "description": "Daniel Mitre",
     "image": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTc7qyx5PC2O4ye.k1H6mGKwYqYvRrdtiZHzmPyzf_7pEgcqH_FiwveAQCtV_tHtCwm6UVqFYSWI5A.ZX.mopK8l02BhG8YQBmQR2o4hACWczD8K8VXHhCKxCTUsmQxCNCFnSlQXHFkq8t5pH0AAVlwzcAhJzogIWjlm6TMtxQGZ_8-&h=300&w=200&format=jpg",
     "price": "R$110",
-    "platform": "PS4"
+    "platform": "Nintendo Switch"
   },
 
 ]
 
 export default class PlaceholderExampleCard extends Component {
 
+  checkColor = platform => {
+    var name = platform.replace(/ .*/, '');
+    switch (name) {
+      case "Nintendo":
+        return "red";
+      case "Xbox":
+        return "green";
+      case "Playstation":
+        return "blue"
+      case "PC":
+        return "black"
+      default:
+        return "yellow"
+    }
+  }
+
   render() {
     return (
       <Fragment>
         <Card.Group doubling itemsPerRow={9} stackable>
           {_.map(anuncios, anuncio => (
-            <Card color="red" key={anuncio.title}>
+            <Card color={this.checkColor(anuncio.platform)} key={anuncio.title}>
               <Image src={anuncio.image} />
               <Card.Content>
                 <Fragment>
