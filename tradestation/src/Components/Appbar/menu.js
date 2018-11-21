@@ -10,23 +10,16 @@ export default class Appbar extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary>
+      <Menu poiting secondary color='red'>
         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+        <Menu.Item
+          content='TradeStation'
+        />
         <Menu.Item
           content='Seus anúncios'
           active={activeItem === 'friends'}
           onClick={this.handleItemClick}
         />
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Procure anúncios...' />
-          </Menu.Item>
-          <Menu.Item
-            name='sair'
-            active={activeItem === 'logout'}
-            onClick={this.handleItemClick}
-          />
-        </Menu.Menu>
       </Menu>
     )
   }
