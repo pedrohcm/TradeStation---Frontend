@@ -22,9 +22,13 @@ class FormAnuncio extends Component {
         valor: "",
         estado: "",
         imagem: "",
+        interesse: "",
         descricao: "",
         usuario: ""
     }
+    /**
+     * 
+ 
 
     handleSubmit = event => {
         event.preventDefault();
@@ -43,6 +47,7 @@ class FormAnuncio extends Component {
         this.props.close();
         window.location.reload();
     }
+        */
 
     render() {
         return (
@@ -54,24 +59,52 @@ class FormAnuncio extends Component {
                 <Form.Field
                     control={Select}
                     options={plataformas}
+                    nome="plataforma"
                     placeholder='Plataforma'>
-                    <label>Nome</label>
+                    <label>Plataforma</label>
                 </Form.Field>
                 <Form.Field>
-                    <label>Tipo</label>
-                    <input placeholder="Categoria do produto" name="type" />
+                    <label>Valor</label>
+                    <input placeholder="Preço do jogo" name="valor" />
                 </Form.Field>
-                <Form.Field>
-                    <label>Preço</label>
-                    <input placeholder="Preço do produto" name="price" />
-                </Form.Field>
-                <Form.Field>
-                    <label>Imagem</label>
-                    <input placeholder="URL da foto do produto" name="img" />
-                </Form.Field>
+                <Form.Group inline>
+                    <label>Estado</label>
+                    <Form.Field
+                        control={Radio}
+                        label='Usado'
+                        value='USADO'
+                    />
+                    <Form.Field
+                        control={Radio}
+                        label='Novo'
+                        value='NOVO'
+                    />
+                    <Form.Field
+                        control={Radio}
+                        label='Seminovo'
+                        value='SEMINOVO'
+                    />
+                </Form.Group>
+                <Form.Group inline>
+                    <label>Interesse</label>
+                    <Form.Field
+                        control={Radio}
+                        label='Venda'
+                        value='VENDA'
+                    />
+                    <Form.Field
+                        control={Radio}
+                        label='Troca'
+                        value='TROCA'
+                    />
+                </Form.Group>
                 <Form.Field>
                     <label>Descrição</label>
-                    <input placeholder="Descrição do produto" name="description" />
+                    <input placeholder="Descrição do jogo" name="description" />
+                </Form.Field>
+                <Form.Field>
+                    <label>Usuário</label>
+                    <input placeholder="Digite seu nome" name="nome" />
                 </Form.Field>
                 <Button.Group fluid>
                     <Button positive type="submit" content='Adicionar'></Button>
