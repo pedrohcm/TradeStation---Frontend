@@ -55,7 +55,7 @@ const anuncios = [
 
 ]
 
-export default class PlaceholderExampleCard extends Component {
+export default class Anuncios extends Component {
 
   checkColor = platform => {
     var name = platform.replace(/ .*/, '');
@@ -76,7 +76,7 @@ export default class PlaceholderExampleCard extends Component {
   render() {
     return (
       <Fragment>
-        <Card.Group doubling itemsPerRow={8} stackable>
+        <Card.Group doubling itemsPerRow={9} stackable>
           {_.map(anuncios, anuncio => (
             <Card color={this.checkColor(anuncio.platform)} key={anuncio.title}>
               <Image src={anuncio.image} />
