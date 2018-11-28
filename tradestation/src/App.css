@@ -27,6 +27,10 @@
   margin-right: 50px
 }
 
+.ui.menu:not(.vertical) .item>.input {
+  top: -7px !important
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

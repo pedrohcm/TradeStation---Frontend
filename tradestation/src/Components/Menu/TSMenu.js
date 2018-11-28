@@ -4,6 +4,7 @@ import TSCadastro from '../Cadastro/TSCadastro'
 import OpcoesMenu from './OpcoesMenu'
 import PaginasMenu from './PaginasMenu'
 import LogoMenu from './LogoMenu'
+import Busca from './Busca'
 import { NavLink } from "react-router-dom";
 
 export default class TSMenu extends Component {
@@ -17,17 +18,19 @@ export default class TSMenu extends Component {
       <Menu pointing secondary color="red">
         <LogoMenu></LogoMenu>
         <Menu.Item
-                    as={NavLink} to='/'
-                    name='home'
-                    active={activeItem === 'home'}
-                    onClick={this.handleItemClick} />
-
-            <Menu.Item
-                content='Seus anúncios'
-                active={activeItem === 'user'}
-                onClick={this.handleItemClick}
-            />
-        <OpcoesMenu></OpcoesMenu>
+          as={NavLink} to='/'
+          name='home'
+          active={activeItem === 'home'}
+          onClick={this.handleItemClick} />
+        <Menu.Item
+          content='Seus anúncios'
+          active={activeItem === 'user'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Menu position='right'>
+          <Busca handleChange={this.props.handleChange}></Busca>
+          <OpcoesMenu></OpcoesMenu>
+        </Menu.Menu>
       </Menu>
     )
   }
