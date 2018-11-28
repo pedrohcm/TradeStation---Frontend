@@ -47,7 +47,7 @@ let listaAnuncios = [
   },
   {
     "title": "PUBG",
-    "description": "Glauber",
+    "description": "Aramis Araújo",
     "image": "https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTc7UOU3_i7wqq6_4pf6s0XYJjeEC3sNu339eGybk1vjz7m1zzU6aOBXEMRGnHYD0GhCzc2B7FuHbSrgh13m3OkZjuvzx2Aw7H8qzFkqNRfrnRQCP05GytpzwjrrvrsC.darsb79W1g80434OstmeXip5S0KrO6O85qg4Ga3M870Zc-&h=300&w=200&format=jpg",
     "price": "R$40",
     "platform": "Xbox One"
@@ -62,8 +62,6 @@ let listaAnuncios = [
 
 ]
 
-
-
 class App extends Component {
 
   constructor(props) {
@@ -77,7 +75,7 @@ class App extends Component {
   handleChange = event => {
     const input = event.target.value.toLowerCase();
     this.setState(currentState => {
-      return { anuncios: listaAnuncios.filter(anuncio => anuncio.titulo.includes(input)) }
+      return { anuncios: listaAnuncios.filter(anuncio => anuncio.title.toLowerCase().includes(input)) }
     });
   };
 
@@ -86,7 +84,7 @@ class App extends Component {
       <HashRouter>
         <div class="site">
           <TSMenu handleChange={this.handleChange}></TSMenu>
-          <Route exact path="/" component={(props) => <TSHome {...props} anuncios={listaAnuncios} />} />
+          <Route exact path="/" component={(props) => <TSHome {...props} anuncios={this.state.anuncios} />} />
           <Route path="/cadastro" component={TSCadastro} />
           <Route path="/login" component={TSLogin} />
         </div>
