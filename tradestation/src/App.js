@@ -84,7 +84,7 @@ class App extends Component {
   handleChange = event => {
     const input = event.target.value.toLowerCase();
     this.setState(currentState => {
-      return { anuncios: listaAnuncios.filter(anuncio => anuncio.title.toLowerCase().includes(input)) }
+      return { anuncios: listaAnuncios.filter(anuncio => anuncio.nome.toLowerCase().includes(input)) }
     });
   };
 
