@@ -1,14 +1,9 @@
 import React, { Component } from 'react'
-import { Input, Menu, Button, Icon } from 'semantic-ui-react'
+import { Menu, Button } from 'semantic-ui-react'
 import { NavLink } from "react-router-dom";
 
 export default class OpcoesMenu extends Component {
-    state = { activeItem: 'home' }
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
     render() {
-        const { activeItem } = this.state
-
         return (
             <Menu.Menu position='right'>
 

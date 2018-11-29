@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import TSCadastro from '../Cadastro/TSCadastro'
 import OpcoesMenu from './OpcoesMenu'
-import PaginasMenu from './PaginasMenu'
 import LogoMenu from './LogoMenu'
 import Busca from './Busca'
 import { NavLink } from "react-router-dom";

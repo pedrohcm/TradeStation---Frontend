@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import EmDestaqueHeader from './Header'
 import Anuncios from './Anuncios'
-import { Button, Container } from 'semantic-ui-react'
+import NovoAnuncio from './NovoAnuncio'
 
 export default class TSHome extends Component {
     render() {
@@ -10,10 +10,7 @@ export default class TSHome extends Component {
                 <EmDestaqueHeader></EmDestaqueHeader>
                 <Anuncios anuncios={this.props.anuncios}></Anuncios>
                 <br></br>
-                <Container>
-                    <Button basic color='red' type='submit'>Adicionar</Button>
-                </Container>
-
+                <NovoAnuncio></NovoAnuncio>
             </div>
         );
     }

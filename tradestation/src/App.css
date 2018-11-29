@@ -18,6 +18,12 @@
   color: white;
 }
 
+div.center{
+  margin:0 auto;
+  display:block;
+  text-align:center; 
+}
+
 .App-link {
   color: #61dafb;
 }

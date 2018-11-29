@@ -1,17 +1,17 @@
 import _ from 'lodash'
 import React, { Component, Fragment } from 'react'
-import { Button, Card, Image, Icon, Label } from 'semantic-ui-react'
+import { Button, Card, Image, Label } from 'semantic-ui-react'
 
 export default class Anuncios extends Component {
 
   checkColor = platform => {
     var name = platform.replace(/ .*/, '');
     switch (name) {
-      case "Nintendo":
+      case "SWITCH":
         return "red";
-      case "Xbox":
+      case "XONE":
         return "green";
-      case "Playstation":
+      case "PS4":
         return "blue"
       case "PC":
         return "black"
@@ -25,12 +25,12 @@ export default class Anuncios extends Component {
       <Fragment>
         <Card.Group doubling itemsPerRow={9} stackable>
           {_.map(this.props.anuncios, anuncio => (
-            <Card color={this.checkColor(anuncio.platform)} key={anuncio.title}>
-              <Image src={anuncio.image} />
+            <Card color={this.checkColor(anuncio.plataforma)} key={anuncio.nome}>
+              <Image src={anuncio.imagem} />
               <Card.Content>
                 <Fragment>
-                  <Card.Header>{anuncio.title}</Card.Header>
-                  <Card.Meta>{anuncio.description}</Card.Meta>
+                  <Card.Header>{anuncio.nome}</Card.Header>
+                  <Card.Meta>{anuncio.usuario}</Card.Meta>
                 </Fragment>
               </Card.Content>
               <Card.Content extra>
@@ -39,7 +39,7 @@ export default class Anuncios extends Component {
                     Comprar
                   </Label>
                   <Button icon>
-                    {anuncio.price}
+                    R${anuncio.valor}
                   </Button>
                 </Button>
               </Card.Content>
