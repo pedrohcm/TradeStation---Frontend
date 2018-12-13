@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Button, Form } from 'semantic-ui-react'
+import PlataformaDropdown from './PlataformaDropdown'
+import EstadoDropdown from './EstadoDropdown';
+import InteresseDropdown from './InteresseDropdown';
 
 /**
  * 
@@ -29,16 +32,22 @@ let interesse = [
 
 class FormAnuncio extends Component {
 
-    state = {
-        nome: "",
-        plataforma: "",
-        valor: "",
-        estado: "",
-        imagem: "",
-        interesse: "",
-        descricao: "",
-        usuario: ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            nome: "",
+            plataforma: "",
+            valor: "",
+            estado: "",
+            imagem: "",
+            interesse: "",
+            descricao: "",
+            usuario: ""
+        }
+        this.plataformaChange = this.plataformaChange.bind(this);
     }
+
+
 
     nomeChange = event => {
         this.setState({ nome: event.target.value });
@@ -55,6 +64,11 @@ class FormAnuncio extends Component {
     usuarioChange = event => {
         this.setState({ usuario: event.target.value });
     }
+    plataformaChange = (e, { value }) => this.setState({ plataforma: value })
+
+    interesseChange = (e, { value }) => this.setState({ interesse: value })
+
+    estadoConversao = (e, { value }) => this.setState({ estado: value })
 
 
     handleSubmit = event => {
@@ -63,14 +77,13 @@ class FormAnuncio extends Component {
         const anuncio = {
             "nome": this.state.nome,
             "valor": +this.state.valor,
-            "estado": "USADO",
-            "plataforma": "XONE",
+            "estado": this.state.estado,
+            "plataforma": this.state.plataforma,
             "imagem": this.state.imagem,
             "descricao": this.state.descricao,
             "usuario": this.state.usuario,
-            "interesse": "VENDA"
+            "interesse": this.state.interesse
         };
-        
         axios.post("http://localhost:3001/anuncio/", anuncio);
         this.props.close();
         window.location.reload();
@@ -85,12 +98,26 @@ class FormAnuncio extends Component {
                 </Form.Group>
                 <Form.Field>
                     <label>Descrição</label>
-                    <input required placeholder="Descrição do jogo" name="descricao" onChange={this.descricaoChange}/>
+                    <input required placeholder="Descrição do jogo" name="descricao" onChange={this.descricaoChange} />
                 </Form.Field>
                 <Form.Field>
                     <label>Usuário</label>
-                    <input required placeholder="Digite seu nome" name="usuario" onChange={this.usuarioChange}/>
+                    <input required placeholder="Digite seu nome" name="usuario" onChange={this.usuarioChange} />
                 </Form.Field>
+                <Form.Group widths='equal'>
+                    <Form.Field>
+                        <label>Plataforma</label>
+                        <PlataformaDropdown plataformaChange={this.plataformaChange}></PlataformaDropdown>
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Estado de Conservação</label>
+                        <EstadoDropdown plataformaChange={this.plataformaChange}></EstadoDropdown>
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Interesse do anúncio</label>
+                        <InteresseDropdown plataformaChange={this.plataformaChange}></InteresseDropdown>
+                    </Form.Field>
+                </Form.Group>
                 <Form.Field>
                     <label>Imagem do jogo</label>
                     <input required placeholder="Coloque o link aqui" name="imagem" onChange={this.imagemChange} />
@@ -105,6 +132,5 @@ class FormAnuncio extends Component {
             </Form>
         );
     }
-
 }
 export default FormAnuncio;

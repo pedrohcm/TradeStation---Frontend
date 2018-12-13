@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Container, Header } from 'semantic-ui-react'
-import FormLogin from './FormLogin'
+import FormCadastro from '../Cadastro/FormCadastro'
 
-export default class Login extends Component {
+export default class InfoAnuncio extends Component {
   render() {
     return (
       <Container>
         <Header as='h3' textAlign='center'>
-          Login
-      </Header>
-        <FormLogin></FormLogin>
+          Cadastro
+            </Header>
+        <FormCadastro></FormCadastro>
       </Container>
     )
   }

@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import React, { Component, Fragment } from 'react'
-import { Button, Card, Image, Label } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
+import ModalAnuncio from './ModalAnuncio';
 
 export default class Anuncios extends Component {
 
@@ -34,14 +35,7 @@ export default class Anuncios extends Component {
                 </Fragment>
               </Card.Content>
               <Card.Content extra>
-                <Button as='div' labelPosition='left'>
-                  <Label as='a' basic pointing='right'>
-                    Comprar
-                  </Label>
-                  <Button icon>
-                    R${anuncio.valor}
-                  </Button>
-                </Button>
+                <ModalAnuncio anuncio={anuncio}></ModalAnuncio>
               </Card.Content>
             </Card>
           ))}
