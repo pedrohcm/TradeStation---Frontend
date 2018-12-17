@@ -28,6 +28,7 @@ class FormLogin extends Component {
     }
 
     loginConfirmado = () => {
+        window.location.reload();
         this.props.history.push('/')
     }
     

@@ -22,7 +22,7 @@ export default class TSMenu extends Component {
           onClick={this.handleItemClick} />
         <Menu.Menu position='right'>
           <Busca handleChange={this.props.handleChange}></Busca>
-          <OpcoesMenu></OpcoesMenu>
+          <OpcoesMenu logado={this.props.logado}></OpcoesMenu>
         </Menu.Menu>
       </Menu>
     )

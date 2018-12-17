@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Dropdown } from 'semantic-ui-react'
 
 let interesse = [
-  { text: 'Vender', value: 'VENDER' },
-  { text: 'Trocar', value: 'TROCAR' },
+  { text: 'Vender', value: 'VENDA' },
+  { text: 'Trocar', value: 'TROCA' },
 ]
 
 export default class InteresseDropdown extends Component {

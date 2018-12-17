@@ -61,11 +61,9 @@ class FormAnuncio extends Component {
             "usuario": this.state.usuario,
             "interesse": this.state.interesse
         };
-
-        console.log("entrei");
-        //axios.post("http://localhost:3001/anuncio/", anuncio);
-        //this.props.close();
-        //window.location.reload();
+        axios.post("http://localhost:3001/anuncio/", anuncio);
+        this.props.close();
+        window.location.reload();
     }
 
     render() {
@@ -75,29 +73,29 @@ class FormAnuncio extends Component {
                     <Form.Input required fluid label='Nome do jogo' placeholder='Digite o nome...' onChange={this.nomeChange} />
                     <Form.Input required fluid label='Valor (R$)' type="number" min="0" placeholder='Digite o valor...' onChange={this.valorChange} />
                 </Form.Group>
-                <Form.Field>
+                <Form.Field required>
                     <label>Descrição</label>
                     <input required placeholder="Descrição do jogo" name="descricao" onChange={this.descricaoChange} />
                 </Form.Field>
-                <Form.Field>
+                <Form.Field required>
                     <label>Usuário</label>
                     <input required placeholder="Digite seu nome" name="usuario" onChange={this.usuarioChange} />
                 </Form.Field>
                 <Form.Group widths='equal'>
-                    <Form.Field>
+                    <Form.Field required>
                         <label>Plataforma</label>
                         <PlataformaDropdown plataformaChange={this.plataformaChange}></PlataformaDropdown>
                     </Form.Field>
-                    <Form.Field>
+                    <Form.Field required>
                         <label>Estado de Conservação</label>
                         <EstadoDropdown conservacaoChange={this.conservacaoChange}></EstadoDropdown>
                     </Form.Field>
-                    <Form.Field>
+                    <Form.Field required>
                         <label>Interesse do anúncio</label>
                         <InteresseDropdown interesseChange={this.interesseChange}></InteresseDropdown>
                     </Form.Field>
                 </Form.Group>
-                <Form.Field>
+                <Form.Field required>
                     <label>Imagem do jogo</label>
                     <input required placeholder="Coloque o link aqui" name="imagem" onChange={this.imagemChange} />
                 </Form.Field>

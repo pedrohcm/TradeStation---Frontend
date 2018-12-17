@@ -23,7 +23,7 @@ export default class ModalAnuncio extends Component {
       <div>
         <Button onClick={this.show('blurring')} as='div' labelPosition='left'>
           <Label as='a' basic pointing='right'>
-            Comprar
+            Ver detalhes
                   </Label>
           <Button onClick={this.show('blurring')} icon>
             R${this.props.anuncio.valor}

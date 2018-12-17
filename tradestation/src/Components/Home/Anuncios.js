@@ -26,7 +26,7 @@ export default class Anuncios extends Component {
       <Fragment>
         <Card.Group doubling itemsPerRow={8} stackable>
           {_.map(this.props.anuncios, anuncio => (
-            <Card color={this.checkColor(anuncio.plataforma)} key={anuncio.nome}>
+            <Card color={this.checkColor(anuncio.plataforma)} key={anuncio.usuario + anuncio.plataforma + anuncio.valor}>
               <Image src={anuncio.imagem} fluid/>
               <Card.Content>
                 <Fragment>

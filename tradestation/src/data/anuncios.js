@@ -69,6 +69,16 @@ const listaAnuncios = [
         "interesse": "Venda",
         "estado": "Novo"
     },
+    {
+        "nome": "Super Smash Bros Ultimate",
+        "descricao": "Cansei de levar surra. Prefiro King of Fighters.",
+        "usuario": "Aramis Araújo",
+        "imagem": "https://i.imgur.com/Yzpmj7v.jpg",
+        "valor": 190,
+        "plataforma": "SWITCH",
+        "interesse": "Venda",
+        "estado": "Novo"
+    },
 
 ]
 

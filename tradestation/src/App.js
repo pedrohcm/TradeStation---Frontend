@@ -15,8 +15,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      anuncios: [...listaAnuncios]
+      anuncios: [...listaAnuncios],
+      logado: (localStorage.userID) ? true : false
     };
+    console.log(localStorage.userID)
+    console.log(this.state.logado)
     this.handleChange = this.handleChange.bind(this);
   };
 
@@ -41,7 +44,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div class="site">
-          <TSMenu handleChange={this.handleChange}></TSMenu>
+          <TSMenu logado={this.state.logado} handleChange={this.handleChange}></TSMenu>
           <Route exact path="/" component={(props) => <TSHome {...props} anuncios={this.state.anuncios} />} />
           <Route path="/cadastro" component={TSCadastro} />
           <Route path="/login" component={TSLogin} />

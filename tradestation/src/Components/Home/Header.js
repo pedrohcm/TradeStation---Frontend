@@ -4,7 +4,7 @@ import { Header } from 'semantic-ui-react'
 const EmDestaqueHeader = () => (
   <div>
     <Header as='h2' block textAlign='center'>
-      <Header.Content>Em destaque</Header.Content>
+      <Header.Content>Anúncios cadastrados</Header.Content>
     </Header>
     <br></br>
   </div>

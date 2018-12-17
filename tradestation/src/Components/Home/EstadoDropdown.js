@@ -15,7 +15,7 @@ export default class EstadoDropdown extends Component {
 
     return (
       <Dropdown
-        onChange={this.props.estadoChange}
+        onChange={this.props.conservacaoChange}
         options={estadosConservacao}
         placeholder='Como está seu jogo?'
         selection
