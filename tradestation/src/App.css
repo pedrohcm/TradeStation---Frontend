@@ -37,6 +37,14 @@ div.center{
   top: -7px !important
 }
 
+.ui.center.aligned.header, .ui.centered.header {
+  color: red;
+}
+
+.ui.definition.table tr td.definition, .ui.definition.table tr td:first-child:not(.ignored) {
+  color: red !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

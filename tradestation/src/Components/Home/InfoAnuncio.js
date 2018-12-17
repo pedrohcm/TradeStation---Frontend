@@ -3,72 +3,67 @@ import { Container, Header, Segment, Image, Grid, Divider, Table, Icon } from 's
 import FormCadastro from '../Cadastro/FormCadastro'
 
 export default class InfoAnuncio extends Component {
+
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <Container>
         <Header as='h3' textAlign='center'>
-          Cadastro
-            </Header>
+          {this.props.anuncio.nome}
+        </Header>
         <Segment>
           <Grid columns={2} relaxed='very'>
-            <Grid.Column>
-              <p>
-                <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-              </p>
-              <p>
-                <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-              </p>
-              <p>
-                <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-              </p>
-              <p>
-                <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
-              </p>
+            <Grid.Column width={5}>
+              <Image src={this.props.anuncio.imagem} fluid/>
             </Grid.Column>
             <Grid.Column>
               <Divider horizontal>
                 <Header as='h4'>
                   <Icon name='tag' />
-                  Description
+                  Descrição
       </Header>
               </Divider>
 
               <p>
-                Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs
-                worldwide.
-    </p>
+                {this.props.anuncio.descricao}
+              </p>
 
               <Divider horizontal>
                 <Header as='h4'>
                   <Icon name='bar chart' />
-                  Specifications
+                  Detalhes
       </Header>
               </Divider>
 
               <Table definition>
                 <Table.Body>
                   <Table.Row>
-                    <Table.Cell width={2}>Size</Table.Cell>
-                    <Table.Cell>1" x 2"</Table.Cell>
+                    <Table.Cell width={2}>Preço</Table.Cell>
+                    <Table.Cell>R$ {this.props.anuncio.valor}</Table.Cell>
                   </Table.Row>
                   <Table.Row>
-                    <Table.Cell>Weight</Table.Cell>
-                    <Table.Cell>6 ounces</Table.Cell>
+                    <Table.Cell>Anúncio de</Table.Cell>
+                    <Table.Cell>{this.props.anuncio.usuario}</Table.Cell>
                   </Table.Row>
                   <Table.Row>
-                    <Table.Cell>Color</Table.Cell>
-                    <Table.Cell>Yellowish</Table.Cell>
+                    <Table.Cell>Plataforma</Table.Cell>
+                    <Table.Cell>{this.props.anuncio.plataforma}</Table.Cell>
                   </Table.Row>
                   <Table.Row>
-                    <Table.Cell>Odor</Table.Cell>
-                    <Table.Cell>Not Much Usually</Table.Cell>
+                    <Table.Cell>Interesse</Table.Cell>
+                    <Table.Cell>{this.props.anuncio.interesse}</Table.Cell>
+                  </Table.Row>
+                  <Table.Row>
+                    <Table.Cell>Estado</Table.Cell>
+                    <Table.Cell>{this.props.anuncio.estado}</Table.Cell>
                   </Table.Row>
                 </Table.Body>
               </Table>
             </Grid.Column>
           </Grid>
-
-          <Divider vertical>And</Divider>
         </Segment>
       </Container>
     )

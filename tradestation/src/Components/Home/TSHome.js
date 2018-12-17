@@ -11,6 +11,7 @@ export default class TSHome extends Component {
                 <Anuncios anuncios={this.props.anuncios}></Anuncios>
                 <br></br>
                 <NovoAnuncio></NovoAnuncio>
+                <br></br>
             </div>
         );
     }
