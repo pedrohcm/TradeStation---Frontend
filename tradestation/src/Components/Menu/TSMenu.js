@@ -20,11 +20,6 @@ export default class TSMenu extends Component {
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick} />
-        <Menu.Item
-          content='Seus anúncios'
-          active={activeItem === 'user'}
-          onClick={this.handleItemClick}
-        />
         <Menu.Menu position='right'>
           <Busca handleChange={this.props.handleChange}></Busca>
           <OpcoesMenu></OpcoesMenu>

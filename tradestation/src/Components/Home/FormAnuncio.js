@@ -5,31 +5,6 @@ import PlataformaDropdown from './PlataformaDropdown'
 import EstadoDropdown from './EstadoDropdown';
 import InteresseDropdown from './InteresseDropdown';
 
-/**
- * 
-
-let plataformas = [
-    { text: 'Playstation 4', value: 'PS4' },
-    { text: 'Xbox One', value: 'XONE' },
-    { text: 'Nintendo Switch', value: 'SWITCH' },
-    { text: 'PC', value: 'PC' },
-    { text: 'Nintendo 3DS', value: '3DS' },
-    { text: 'Playstation 3', value: 'PS3' },
-    { text: 'Xbox 360', value: 'X360' },
-]
-
-let estadosConservacao = [
-    { text: 'Usado', value: 'USADO' },
-    { text: 'Novo', value: 'NOVO' },
-    { text: 'Seminovo', value: 'SEMINOVO' },
-]
-
-let interesse = [
-    { text: 'Vender', value: 'VENDER' },
-    { text: 'Trocar', value: 'TROCAR' },
-]
- */
-
 class FormAnuncio extends Component {
 
     constructor(props) {
@@ -45,6 +20,8 @@ class FormAnuncio extends Component {
             usuario: ""
         }
         this.plataformaChange = this.plataformaChange.bind(this);
+        this.interesseChange = this.interesseChange.bind(this);
+        this.conservacaoChange = this.conservacaoChange.bind(this);
     }
 
 
@@ -68,7 +45,7 @@ class FormAnuncio extends Component {
 
     interesseChange = (e, { value }) => this.setState({ interesse: value })
 
-    estadoConversao = (e, { value }) => this.setState({ estado: value })
+    conservacaoChange = (e, { value }) => this.setState({ estado: value })
 
 
     handleSubmit = event => {
@@ -84,9 +61,11 @@ class FormAnuncio extends Component {
             "usuario": this.state.usuario,
             "interesse": this.state.interesse
         };
-        axios.post("http://localhost:3001/anuncio/", anuncio);
-        this.props.close();
-        window.location.reload();
+
+        console.log("entrei");
+        //axios.post("http://localhost:3001/anuncio/", anuncio);
+        //this.props.close();
+        //window.location.reload();
     }
 
     render() {
@@ -111,11 +90,11 @@ class FormAnuncio extends Component {
                     </Form.Field>
                     <Form.Field>
                         <label>Estado de Conservação</label>
-                        <EstadoDropdown plataformaChange={this.plataformaChange}></EstadoDropdown>
+                        <EstadoDropdown conservacaoChange={this.conservacaoChange}></EstadoDropdown>
                     </Form.Field>
                     <Form.Field>
                         <label>Interesse do anúncio</label>
-                        <InteresseDropdown plataformaChange={this.plataformaChange}></InteresseDropdown>
+                        <InteresseDropdown interesseChange={this.interesseChange}></InteresseDropdown>
                     </Form.Field>
                 </Form.Group>
                 <Form.Field>
