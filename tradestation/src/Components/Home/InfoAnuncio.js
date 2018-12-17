@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Header, Segment, Image, Grid, Divider, Table, Icon } from 'semantic-ui-react'
-import FormCadastro from '../Cadastro/FormCadastro'
 
 export default class InfoAnuncio extends Component {
-
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (

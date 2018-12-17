@@ -5,10 +5,6 @@ import { withRouter } from 'react-router';
 
 class OpcoesMenu extends Component {
 
-    constructor(props){
-        super(props);
-    }
-
     logout(){
         localStorage.removeItem("userID");
         localStorage.removeItem("token");

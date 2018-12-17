@@ -45,7 +45,7 @@ class App extends Component {
       <HashRouter>
         <div class="site">
           <TSMenu logado={this.state.logado} handleChange={this.handleChange}></TSMenu>
-          <Route exact path="/" component={(props) => <TSHome {...props} anuncios={this.state.anuncios} />} />
+          <Route exact path="/" component={(props) => <TSHome {...props} anuncios={this.state.anuncios} logado={this.state.logado} />} />
           <Route path="/cadastro" component={TSCadastro} />
           <Route path="/login" component={TSLogin} />
         </div>
